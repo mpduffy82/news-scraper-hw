@@ -1,0 +1,41 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="main">
+    
+    <a href="/" class="header" style="text-decoration:none">Video Game Scraper </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a href="/" class="btn btn-light btn-sm navBtn" id="homePgBtn">Home</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container newsList">
+    <div class="row">
+        {{#each saved}}
+        <div class="card col-lg-4 col-12 m-auto" id="news">
+            <a href="{{this.link}}" id="ignLink">
+                <h6>{{this.title}}</h6>
+               <img src="{{this.img}}" class="card-img-top" alt="...">
+            </a>
+     
+          
+
+            {{!-- Delete button --}}
+            <button type ="button"class="unSaveBtn btn btn-danger" data-ObjectId="{{this._id}}" data-State="{{this.saved}}">
+               Delete
+            </button>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+
+
+
